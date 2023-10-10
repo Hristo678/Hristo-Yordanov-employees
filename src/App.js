@@ -1,23 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import CSVUploader from './components/CSVUploader';
+import EmployeesPairTable from './components/EmployeesPairTable';
+import { useEffect, useState } from 'react';
 
 function App() {
+
+  const [employeesData, setEmployeesData] = useState([]);
+
+  useEffect(() => {
+
+  },[employeesData])
+
+  const handleDataLoaded = (data) => {
+    setEmployeesData(data);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+      <h1>Employees pair identificator</h1>
+      <CSVUploader onDataLoaded={handleDataLoaded} />
+      <EmployeesPairTable employeesData={employeesData} />
+    </div>
     </div>
   );
 }
