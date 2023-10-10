@@ -17,7 +17,7 @@ function CSVUploader({ onDataLoaded }) {
               data.push( { empId: result.data[0][0], projectId: result.data[0][1], 
               dateFrom: result.data[0][2], dateTo: result.data[0][3] })
             }
-            // Iterating thedata array from the file, and saving the data into data object.
+            // Iterating the data array from the file, and saving the data into the data object.
             for (let i = 1; i < result.data.length; i++) {
               data.push( { empId: result.data[i][0], projectId: result.data[i][1], 
               dateFrom: result.data[i][2], dateTo: result.data[i][3] })

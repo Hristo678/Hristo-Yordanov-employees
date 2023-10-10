@@ -26,13 +26,13 @@ function EmployeesPairTable({ employeesData }) {
       for (let j = i + 1; j < employeesData.length; j++) {
         const emp1 = employeesData[i]
         const emp2 = employeesData[j]
-        // Check if the employees hava common projects.
+        // Check if the employees has common projects.
         if (emp1.empId !== emp2.empId && emp1.projectId === emp2.projectId) {
         
             const projectWorkingDays = findCommonDays(emp1.dateFrom, emp1.dateTo, emp2.dateFrom, emp2.dateTo)
             let empId1;
             let empId2;
-            // Order employees id descending
+            // Order employees id ind descending order
             if(emp1.empId < emp2.empId ){
                 empId1 = emp1.empId
                 empId2 = emp2.empId
